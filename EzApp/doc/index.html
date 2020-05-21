@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>EzApp: EzApp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="GPALogoSmall.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EzApp
+   </div>
+   <div id="projectbrief">Simple interface de programmation d’application</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.11 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">EzApp </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
+Introduction</h1>
+<p>La librairie <code>EzApp</code> a été créée pour faciliter le développement d'une application ayant une interface graphique rudimentaire.</p>
+<p>Les outils offerts sont simples mais limités. L'objectif étant d'offrir une interface de programmation permettant de créer des petits projets stimulants en langage C++ où l'emphase est mis sur les autres aspects que l'interface utilisateur.</p>
+<h1><a class="anchor" id="sfml_sec"></a>
+SFML</h1>
+<p>La librairie <code>EzApp</code> est entièrement basée sur la librairie <a href="https://www.sfml-dev.org/index.php"><code>SFML</code></a>. En fait, <code>EzApp</code> est une simplification de la libraire <code>SFML</code>. D'ailleurs, le vocabulaire utilisé en est librement inspiré.</p>
+<h1><a class="anchor" id="element_sec"></a>
+Éléments principaux</h1>
+<p>Voici une brève description des constituants :</p><ul>
+<li>la librairie utilise le namespace <code>ezapp</code> (tout en minuscule).</li>
+<li>la classe <a class="el" href="classezapp_1_1_ez_app.html" title="Classe principale d&#39;une application. ">ezapp::EzApp</a> permet de créer une application :<ul>
+<li>trois fonctions peuvent être substitué permettant de créer une application personnalisée (polymorphisme)</li>
+<li>la sous-classes <a class="el" href="classezapp_1_1_ez_app_1_1_parameters.html" title="Paramètres de l&#39;application. ">ezapp::EzApp::Parameters</a> permet la paramétrisation des éléments importants de l'application<ul>
+<li>taille de la fenêtre</li>
+<li>titre de la fenêtre</li>
+<li>icône de la fenêtre</li>
+<li>niveau d'anti crénelage pour l'affichage</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>les classes permettant la gestion des entrées/sorties:<ul>
+<li><a class="el" href="classezapp_1_1_assets.html" title="Réalise la gestion des ressources de l&#39;application. ">ezapp::Assets</a> : ressources</li>
+<li><a class="el" href="classezapp_1_1_keyboard.html" title="Permet de connaître l&#39;état du clavier. ">ezapp::Keyboard</a> : clavier</li>
+<li><a class="el" href="classezapp_1_1_mouse.html" title="Gestion de la souris. ">ezapp::Mouse</a> : souris (<em>non fonctionnel</em>)</li>
+<li><a class="el" href="classezapp_1_1_screen.html" title="Permet d&#39;interagir avec l&#39;écran. ">ezapp::Screen</a> : l'affichage</li>
+<li><a class="el" href="classezapp_1_1_sound.html" title="Gestion de son - CLasse incomplète et non fonctionnelle. ">ezapp::Sound</a> : le son (<em>non fonctionnel</em>)</li>
+<li><a class="el" href="classezapp_1_1_timer.html" title="Classe utilitaire donnant accès à des métriques de temps. ">ezapp::Timer</a> : la gestion de temps</li>
+</ul>
+</li>
+<li>les classes liées aux graphiques :<ul>
+<li><a class="el" href="classezapp_1_1_circle_shape.html" title="Forme circulaire. ">ezapp::CircleShape</a> : forme circulaire</li>
+<li><a class="el" href="classezapp_1_1_polygonal_shape.html" title="Forme polygonale convexe. Cette classe est abstraite (non instantiable). ">ezapp::PolygonalShape</a> : forme polygonale</li>
+<li><a class="el" href="classezapp_1_1_rectangle_shape.html" title="Forme rectangulaire. ">ezapp::RectangleShape</a> : forme rectangulaire</li>
+<li><a class="el" href="classezapp_1_1_text_shape.html" title="Classe permettant d&#39;afficher du texte. ">ezapp::TextShape</a> : forme circulaire</li>
+</ul>
+</li>
+<li>primitives géométriques :<ul>
+<li><a class="el" href="classezapp_1_1_point.html" title="Classe utilitaire représentant un point dans l&#39;espace 2d. ">ezapp::Point</a> : représente un point dans l'espace 2d (classe <code>template</code>)<ul>
+<li><code>PointInt</code> = <code>Point&lt;int&gt;</code></li>
+<li><code>PointReal</code> = <code>Point&lt;float&gt;</code></li>
+</ul>
+</li>
+<li><a class="el" href="classezapp_1_1_size.html" title="Classe utilitaire représentant une taille dans l&#39;espace 2d. ">ezapp::Size</a> : représente une taille dans l'espace 2d (classe <code>template</code>)<ul>
+<li><code>SizeInt</code> = <code>Size&lt;int&gt;</code></li>
+<li><code>SizeReal</code> = <code>Size&lt;float&gt;</code></li>
+</ul>
+</li>
+<li><a class="el" href="classezapp_1_1_rectangle.html" title="Classe utilitaire représentant un rectangle dans l&#39;espace 2d. ">ezapp::Rectangle</a> : représente un rectangle dans l'espace 2d (classe <code>template</code>)<ul>
+<li><code>RectangleInt</code> = <code>Rectangle&lt;int&gt;</code></li>
+<li><code>RectangleReal</code> = <code>Rectangle&lt;float&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="install_sec"></a>
+Installation et configuration</h1>
+<p>Sachez que la librairie a été compilée avec VisualStudio 2017 en 64 bits uniquement. Il est donc impossible de l'utiliser sous MAC ou Linux (sans émulateur Windows) ou en mode x86. Par ailleurs, la librairie est compatible avec Visual Studio 2019 mais les indications plus bas sont valides mais se retrouvent à des endroits qui peuvent être différentes.</p>
+<p>Les indications ici sont en anglais (désolé, je n'avais qu'une version anglophone lors de la rédaction de ces instructions).</p>
+<p>Voici les étapes pour créer un projet utilisant la librairie <code>EzApp</code> dans <code>VisualStudio</code> :</p><ol type="1">
+<li>Création d'un projet<ul>
+<li>Menu : File | New | Project...</li>
+<li>Dans la fenêtre : New Project :<ul>
+<li>Type : Empty project</li>
+<li>Name : donner un nom à votre projet</li>
+<li>Location : déterminer le dossier</li>
+<li>Solution Name : donner un nom à votre solution</li>
+</ul>
+</li>
+<li>Prenez en note le nom du projet ainsi que de la solution car pour le reste des indications, nous y ferons référence :<ul>
+<li><code>[[pro]]</code> : le dossier du projet</li>
+<li><code>[[sol]]</code> : le dossier de la solution</li>
+<li>On remarque d'ailleurs que votre projet se retrouve sous solution : <code>...\[[sol]]\[[pro]]\</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Créer le point d'entrée du projet :<ul>
+<li>Menu : Project | Add New Items...</li>
+<li>Dans la fenêtre : Add New Item - [pro] :<ul>
+<li>Type : C++ File (.cpp)</li>
+<li>Name : le nom que vous voulez (on suggère souvent soit : <code>source.cpp</code>, <code>main.cpp</code> ou préférablement <code>[[pro]].cpp</code>)</li>
+</ul>
+</li>
+<li>Dans le fichier ajouté, mettre ce code :<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;EzApp.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> WinMain() </div><div class="line">{ </div><div class="line">     <a class="code" href="classezapp_1_1_ez_app.html">ezapp::EzApp</a> a; </div><div class="line"></div><div class="line">     a.<a class="code" href="classezapp_1_1_ez_app.html#aa7e3ac0b5b7b8e2c33274ef757427597">run</a>();</div><div class="line">     <span class="keywordflow">return</span> 0; </div><div class="line">}</div></div><!-- fragment --></li>
+</ul>
+</li>
+<li>Copie de la librairie dans votre solution :<ul>
+<li>Copier le dossier fourni nommé <code>EzApp</code> dans le dossier de votre solution <code>[[sol]]</code>.</li>
+<li>Vous devriez avoir cette structure de dossiers :<ul>
+<li>[[sol]]<ul>
+<li>EzApp<ul>
+<li>doc</li>
+<li>header</li>
+<li>lib</li>
+<li>resources</li>
+</ul>
+</li>
+<li>[[pro]]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Copie de la police de caractères <code>Arial</code> dans votre projet :<ul>
+<li>Copier le fichier fourni nommé <code>Arial.ttf</code> dans le dossier de votre projet <code>[[pro]]</code>.</li>
+</ul>
+</li>
+<li>Configuration de VisualStudio :<ul>
+<li>Menu : Project | <code>[[pro]]</code> Properties</li>
+<li>Dans la fenêtre : <code>[[pro]]</code> Property Pages<ul>
+<li>Étape 1 :<ul>
+<li>Configuration<ul>
+<li><code>All Configurations</code></li>
+</ul>
+</li>
+<li>Platform<ul>
+<li><code>x64</code></li>
+</ul>
+</li>
+<li>C/C++ | General | Additional Include Directories : ajouter<ul>
+<li><code>..\EzApp\header\</code></li>
+</ul>
+</li>
+<li>C/C++ | Langage | C++ Language Standard : choisir<ul>
+<li><code>ISO C++ Latest Draft Standard (/std:c++latest)</code></li>
+</ul>
+</li>
+<li>Linker | Input | Additional Dependencies : ajouter<ul>
+<li><code>ezapp.lib</code></li>
+</ul>
+</li>
+<li>Linker | System | SubSystem : choisir<ul>
+<li><code>Windows (/SUBSYSTEM:WINDOWS)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Étape 2 :<ul>
+<li>Configuration<ul>
+<li>Debug</li>
+</ul>
+</li>
+<li>Platform<ul>
+<li>x64</li>
+</ul>
+</li>
+<li>Linker | General | Link Library Dependency : ajouter<ul>
+<li><code>..\EzApp\lib\Debug\</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Étape 3 :<ul>
+<li>Configuration<ul>
+<li>Release</li>
+</ul>
+</li>
+<li>Platform<ul>
+<li>x64</li>
+</ul>
+</li>
+<li>Linker | General | Link Library Dependency : ajouter<ul>
+<li><code>..\EzApp\lib\Release\</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Faire un test : Exécuter le programme. Vous devriez avoir une fenêtre de 800 x 600 titrée <code>EzApp!</code> avec un arrière pla noir.</li>
+</ol>
+<p>Problèmes fréquents :</p><ul>
+<li>Si vous avez suivi attentivement ces indications et que vous n'arrivez pas à compiler, il est possible que vous n'avez pas mis le projet courant en mode <code>x64</code>.</li>
+<li>Si l'application compile, est liée et s'exécute sans problème mais <em>crash</em> au démarrage, c'est certainement que vous avez oublié d'ajouter la police de caractères Arial. <b>La police de caractères est une ressource nécessaire à l'exécution de la librairie.</b></li>
+</ul>
+<h1><a class="anchor" id="example_sec"></a>
+Utilisation</h1>
+<p>Pour créer une application, il suffit de créer sa propre classe héritant de <a class="el" href="classezapp_1_1_ez_app.html" title="Classe principale d&#39;une application. ">ezapp::EzApp</a> et de substituer les fonctions virtuelles suivantes :</p><ul>
+<li><a class="el" href="classezapp_1_1_ez_app.html#a0ba6f544c34eee81af9b32443bfba685" title="Fonction offrant une zone d&#39;initialisation. ">ezapp::EzApp::setup</a> : zone de préparation avant de lancer la boucle d'exécution</li>
+<li><a class="el" href="classezapp_1_1_ez_app.html#affc9efcabc0e4ec9d0ac117e121a0f6c" title="Fonction permettant de réagir aux différents évènements. ">ezapp::EzApp::updateFromInputs</a> : permet de réagir aux différents évènements et de faire les traitements nécessaires à l'application</li>
+<li><a class="el" href="classezapp_1_1_ez_app.html#a6856443ce0ffbee44276860772a09f96" title="Fonction permettant de donner une rétroaction à l&#39;utilisateur (visuel et sonore). ...">ezapp::EzApp::updateOutputs</a> : permet de donner du <em>feedback</em> à l'utilisateur via l'écran et les haut parleurs.</li>
+</ul>
+<p>Après avoir créé une instance de cette classe, l'appel de la fonction <a class="el" href="classezapp_1_1_ez_app.html#aa7e3ac0b5b7b8e2c33274ef757427597" title="Démarre l&#39;application. ">ezapp::EzApp::run</a> démarre l'application. L'application s'exécute tant que l'utilisateur n'a pas cliqué sur le bouton de fermeture (le <code>X</code> en haut à droite) et que la fonction <a class="el" href="classezapp_1_1_ez_app.html#affc9efcabc0e4ec9d0ac117e121a0f6c" title="Fonction permettant de réagir aux différents évènements. ">ezapp::EzApp::updateFromInputs</a> retourne vrai. Le schéma suivant illustre le flux de l'exécution du programme. </p><div class="image">
+<img src="EzApp_run_small.png" alt="EzApp_run_small.png"/>
+</div>
+<h1><a class="anchor" id="example_sec"></a>
+Utilisation</h1>
+<p><em>Voir l'exemple fait en classe</em> </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
