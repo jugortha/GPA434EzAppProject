@@ -30,7 +30,7 @@ bool processEvents(ezapp::Keyboard const & keyboard, ezapp::Timer const & timer)
 float v{ 0.0f };
 
 void processDisplay(ezapp::Screen & screen) {
-    / Color myAwesomeColor1(1.0f, 1.0f, 0.0f);        // jaune
+    Color myAwesomeColor1(1.0f, 1.0f, 0.0f);        // jaune
     Color myAwesomeColor2(1.0f, 0.0f, 1.0f, 1.0f);  // magenta
     Color myAwesomeColor3;                          // noir
     myAwesomeColor3 = myAwesomeColor1.processGradient(myAwesomeColor2, std::sin(v) * 0.5f + 0.5f, false);
