@@ -39,3 +39,4 @@ private:
 
     float linearInterpolation(float x1, float y1, float x2, float y2, float x);
 };
+#endif // COLOR_H
