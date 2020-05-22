@@ -29,7 +29,7 @@ public:
 
     // Utilitaires
     void buildRegular(size_t verticesCount, float circunscribedRadius);
-    // build... ... ...
+   /*Remplie le tableau de points du polygones*/
 
     void draw(ezapp::Screen& screen, float x = 0.0f, float y = 0.0f, float rotation = 0.0f, float scale = 1.0f);
 

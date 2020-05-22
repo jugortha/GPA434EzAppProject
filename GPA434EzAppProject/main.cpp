@@ -56,12 +56,16 @@ void processDisplay(ezapp::Screen & screen) {
     //screen.drawPolygon(200.0f + v * 40.0f, 200.0f);
 
 
-    Polygon p;
+    Polygon p,polyTest;
     myAwesomeColor3.invert();
-    p.buildRegular(7, 100.0f);
+    p.buildRegular(4, 100.0f);
     p.setColors(myAwesomeColor3, Color(), 1.0f);
     p.draw(screen, 200.0f + v * 40.0f, 200.0f, v * 1.0f);
+
+    
+
 }
+
 
 
 int WinMain() 

@@ -24,9 +24,11 @@ public:
     void setX(float x);
     void setY(float y);
     void set(float x, float y);
+    
     void setPolar(float norm, float thetaRadians);
-
+    /*Trouve l'angle entre 2 points du polygone*/
     // Utilitaires
+
     float distance_squared(Vect2d other);
     float distance(Vect2d other);
 
