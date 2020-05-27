@@ -30,6 +30,7 @@ public:
     // Utilitaires
     void buildRegular(size_t verticesCount, float circunscribedRadius);
     // build... ... ...
+    void buildCircle(float radius, float sideLength = 10.0f);
 
     void draw(ezapp::Screen& screen, float x = 0.0f, float y = 0.0f, float rotation = 0.0f, float scale = 1.0f);
 

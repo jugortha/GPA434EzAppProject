@@ -27,8 +27,9 @@ public:
     void setPolar(float norm, float thetaRadians);
 
     // Utilitaires
-    float distance_squared(Vect2d other);
-    float distance(Vect2d other);
+    void reset();
+    float distance_squared(Vect2d const & other);
+    float distance(Vect2d const & other);
 
     std::string toString();
 

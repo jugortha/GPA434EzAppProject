@@ -31,6 +31,13 @@ void Polygon::buildRegular(size_t verticesCount, float circunscribedRadius)
     }
 }
 
+
+void Polygon::buildCircle(float radius, float sideLength)
+{
+    sideLength = std::max(1.0f, sideLength);
+    buildRegular(std::max(16.0f, 2.0f * 3.141592654f * radius / sideLength), radius);
+}
+
 void Polygon::draw(ezapp::Screen& screen, float x, float y, float rotation, float scale)
 {
     screen.setBrush(mFillColor.red(),

@@ -61,12 +61,17 @@ void Vect2d::setPolar(float norm, float thetaRadians)
     setY(norm * std::sin(thetaRadians));
 }
 
-float Vect2d::distance_squared(Vect2d other)
+void Vect2d::reset()
+{
+    mX = mY = 0.0f;
+}
+
+float Vect2d::distance_squared(Vect2d const& other)
 {
     return std::pow(mX - other.mX, 2.0f) + std::pow(mY - other.mY, 2.0f);
 }
 
-float Vect2d::distance(Vect2d other)
+float Vect2d::distance(Vect2d const & other)
 {
     return std::sqrt(distance_squared(other));
 }
