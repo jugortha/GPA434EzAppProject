@@ -7,13 +7,55 @@ Polygon::Polygon()
     : mVertices(3),
     mFillColor(1.0f, 1.0f, 1.0f, 1.0f),
     mOutlineColor(),
-    mOutlineWidth{ 1.0f }
+    mOutlineWidth{ 1.0f },
+    mPosition(600.0f, 400.0f),
+    mVelocity(),
+    mAcceleration(),
+    mRadius{ 25.0f }
+
 {
 }
 
 Polygon::~Polygon()
 {
 }
+
+Vect2d Polygon::position()
+{
+    return mPosition;
+}
+
+Vect2d Polygon::velocity()
+{
+    return mVelocity;
+}
+
+Vect2d Polygon::acceleration()
+{
+    return mAcceleration;
+}
+
+float Polygon::radius()
+{
+    return mRadius;
+}
+
+void Polygon::addAcceleration(Vect2d& acceleration)
+{
+    mAcceleration.set(mAcceleration.x() + acceleration.x(), mAcceleration.y() + acceleration.y());
+}
+
+void Polygon::processTime(float elapsedTime)
+{
+    float xPos{ mPosition.x() + mVelocity.x() * elapsedTime + 0.5f * mAcceleration.x() * elapsedTime * elapsedTime };
+    float yPos{ mPosition.y() + mVelocity.y() * elapsedTime + 0.5f * mAcceleration.y() * elapsedTime * elapsedTime };
+    float yVel{ mVelocity.y() + mAcceleration.y() * elapsedTime };
+    float xVel{ mVelocity.x() + mAcceleration.x() * elapsedTime };
+    mPosition.set(xPos, yPos);
+    mVelocity.set(xVel, yVel);
+    mAcceleration.reset();
+}
+
 
 void Polygon::setColors(Color fillColor, Color outlineColor, float outlineWidth)
 {
@@ -38,7 +80,7 @@ void Polygon::buildCircle(float radius, float sideLength)
     buildRegular(std::max(16.0f, 2.0f * 3.141592654f * radius / sideLength), radius);
 }
 
-void Polygon::draw(ezapp::Screen& screen, float x, float y, float rotation, float scale)
+void Polygon::draw(ezapp::Screen& screen, float rotation, float scale)
 {
     screen.setBrush(mFillColor.red(),
         mFillColor.green(),
@@ -50,5 +92,5 @@ void Polygon::draw(ezapp::Screen& screen, float x, float y, float rotation, floa
         mOutlineColor.alpha(),
         mOutlineWidth);
     screen.setPolygonVertices(mVertices);
-    screen.drawPolygon(x, y, rotation, scale);
+    screen.drawPolygon(mPosition.x(), mPosition.y(), rotation, scale);
 }

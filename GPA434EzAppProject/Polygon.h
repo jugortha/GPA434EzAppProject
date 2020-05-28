@@ -15,30 +15,39 @@ public:
     Polygon();
     ~Polygon();
 
+   
     // Mutateurs
-    //void setFill(Color fillColor);
-    //void setOutline(Color outlineColor, float outlineWidth = 1.0f);
     void setColors(Color fillColor, Color outlineColor, float outlineWidth = 1.0f);
 
     // Accesseurs
-    //Color fillColor();
-    //Color outlineColor();
-    //float outlineWidth();
-    //std::vector<Vect2d> vertices();
+    Vect2d position();
+    Vect2d velocity();
+    Vect2d acceleration();
+    float radius();
+   
 
 
     // Utilitaires
+    void addAcceleration(Vect2d& acceleration);
+    void processTime(float elapsedTime);
+    
+    // build
     void buildRegular(size_t verticesCount, float circunscribedRadius);
-    // build... ... ...
+
     void buildCircle(float radius, float sideLength = 10.0f);
 
-    void draw(ezapp::Screen& screen, float x = 0.0f, float y = 0.0f, float rotation = 0.0f, float scale = 1.0f);
+    void draw(ezapp::Screen& screen, float rotation = 0.0f, float scale = 1.0f);
 
 private:
     std::vector<Vect2d> mVertices;
     Color mFillColor;
     Color mOutlineColor;
     float mOutlineWidth;
+    Vect2d mPosition;
+    Vect2d mVelocity;
+    Vect2d mAcceleration;
+  
+    float mRadius;
 };
 
 

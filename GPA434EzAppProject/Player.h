@@ -8,13 +8,20 @@
 class Player
 {
     
-    public:
-        Player();
-        ~Player();
+public:
+    Player();
+      
+       
+       
+       ~Player();
 
+    
+
+       void draw(ezapp::Screen& screen);
 private:
-    Polygon mPolygon;
-    Vect2d mAcceleration;
+    
+   
+    Polygon mShape;
     
 };
 
