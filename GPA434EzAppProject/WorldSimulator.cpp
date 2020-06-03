@@ -16,7 +16,7 @@ WorldSimulator::~WorldSimulator()
 
 bool WorldSimulator::processEvents(ezapp::Keyboard const& keyboard, ezapp::Timer const& timer)
 {
-    
+    // run until ESCAPE is pressed
 
     return !keyboard.isKeyPressed(ezapp::Keyboard::Key::Escape);
 }
@@ -27,7 +27,10 @@ void WorldSimulator::processDisplay(ezapp::Screen& screen)
         mBackgroundColor.green(),
         mBackgroundColor.blue(),
         mBackgroundColor.alpha());
+    
+    // Define background color and apply it
+    screen.setBrush(0.34f, 0.45f, 0.56f, 1.0f); // medium dark grey blue
     screen.clear();
 
-    mBall.draw(screen);
+    mPlayer.draw(screen);
 }

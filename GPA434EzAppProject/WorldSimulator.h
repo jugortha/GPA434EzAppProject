@@ -5,6 +5,7 @@
 #include <EzApp>
 #include "Color.h"
 #include "Player.h"
+#include "Asteroid.h"
 
 class WorldSimulator
 {
@@ -19,6 +20,6 @@ private:
     size_t mWidth, mHeight;
     Color mBackgroundColor;
     Player mPlayer;
-
+    std::vector<Asteroid> mAsteroids;
 };
 #endif // WORLDSIMULATION_H

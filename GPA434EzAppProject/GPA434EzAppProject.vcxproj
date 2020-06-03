@@ -95,6 +95,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -103,6 +104,7 @@
     <ClCompile Include="WorldSimulator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Asteroid.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Polygon.h" />

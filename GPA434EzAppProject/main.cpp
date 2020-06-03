@@ -1,26 +1,12 @@
 
 #include <EzApp>
+#include "WorldSimulator.h"
 
 // Application
 // Keyboard
 // Screen
 // Timer
 
-bool processEvents(ezapp::Keyboard const & keyboard, ezapp::Timer const & timer) {
-    // ...
-
-    // run until ESCAPE is pressed
-    return !keyboard.isKeyPressed(ezapp::Keyboard::Key::Escape);
-}
-
-
-void processDisplay(ezapp::Screen & screen) {
-    // Define background color and apply it
-    screen.setBrush(0.34f, 0.45f, 0.56f, 1.0f); // medium dark grey blue
-    screen.clear();
-
-    // ...
-}
 
 
 int WinMain() 
@@ -35,8 +21,11 @@ int WinMain()
     // Define main application and setup parameters
     ezapp::Application app(ezapp::Application::Parameters(windowWidth, windowHeight, title, iconFilename, fontFilename));
 
+    // Define world
+    WorldSimulator worldSimulator(windowWidth, windowHeight);
+
     // Run application
-    app.run(processEvents, processDisplay);
+    app.run(worldSimulator, &WorldSimulator::processEvents, &WorldSimulator::processDisplay);
 
     // End the program
     return 0;
