@@ -23,13 +23,15 @@ bool WorldSimulator::processEvents(ezapp::Keyboard const& keyboard, ezapp::Timer
 
 void WorldSimulator::processDisplay(ezapp::Screen& screen)
 {
+    // Define background color and apply it
+    // medium dark grey blue
+
     screen.setBrush(mBackgroundColor.red(),
         mBackgroundColor.green(),
         mBackgroundColor.blue(),
         mBackgroundColor.alpha());
     
-    // Define background color and apply it
-    screen.setBrush(0.34f, 0.45f, 0.56f, 1.0f); // medium dark grey blue
+    
     screen.clear();
 
     mPlayer.draw(screen);

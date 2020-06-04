@@ -33,7 +33,8 @@ public:
     
     // build
     void buildRegular(size_t verticesCount, float circunscribedRadius);
-
+    void buildCustom(std::vector<Vect2d>);
+    
     void buildCircle(float radius, float sideLength = 10.0f);
 
     void draw(ezapp::Screen& screen, float rotation = 0.0f, float scale = 1.0f);
@@ -48,6 +49,7 @@ private:
     Vect2d mAcceleration;
   
     float mRadius;
+    float mAngle
 };
 
 

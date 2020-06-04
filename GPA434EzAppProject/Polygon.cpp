@@ -11,7 +11,8 @@ Polygon::Polygon()
     mPosition(600.0f, 400.0f),
     mVelocity(),
     mAcceleration(),
-    mRadius{ 25.0f }
+    mRadius{ 25.0f },
+    mAngle{0.0f}
 
 {
 }
@@ -73,6 +74,13 @@ void Polygon::buildRegular(size_t verticesCount, float circunscribedRadius)
     }
 }
 
+void Polygon::buildCustom(std::vector<Vect2d> mPointsCloud)
+{  
+    mVertices.resize(std::max((size_t)3, mPointsCloud.size()));
+    for (size_t i{}; i < mVertices.size(); ++i) {
+        mVertices[i].set(mPointsCloud[i].x(), mPointsCloud[i].y());
+    }
+}
 
 void Polygon::buildCircle(float radius, float sideLength)
 {
@@ -92,5 +100,11 @@ void Polygon::draw(ezapp::Screen& screen, float rotation, float scale)
         mOutlineColor.alpha(),
         mOutlineWidth);
     screen.setPolygonVertices(mVertices);
+
+
+    //Fontion acceleration 
+    //
+
+
     screen.drawPolygon(mPosition.x(), mPosition.y(), rotation, scale);
 }

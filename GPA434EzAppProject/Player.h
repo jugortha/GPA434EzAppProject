@@ -10,9 +10,7 @@ class Player
     
 public:
     Player();
-      
-       
-       
+
        ~Player();
 
     
@@ -22,7 +20,8 @@ private:
     
    
     Polygon mShape;
-    
+    Color mColor;
+    std::vector<Vect2d> mLayout;
 };
 
 #endif // PLAYER_H
