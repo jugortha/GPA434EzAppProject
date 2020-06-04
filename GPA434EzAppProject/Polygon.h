@@ -49,7 +49,7 @@ private:
     Vect2d mAcceleration;
   
     float mRadius;
-    float mAngle
+    float mAngle;
 };
 
 
