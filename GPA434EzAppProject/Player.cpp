@@ -2,7 +2,7 @@
 #include "Color.h"
 #include <cmath>
 #include "Vect2d.h"
-#define SCR_REF_OFFSET 3.14159265f * (1.5f)
+
 Player::Player()
     : mColor1(1.0f, 1.0f, 0.0f, 1.0f),
     mColor2(1.0f, 1.0f, 0.0f, 1.0f),   // jaune
@@ -39,9 +39,10 @@ void Player::draw(ezapp::Screen& screen)
         mSheald.setColors(mColor4, Color(0.0f, 0.0f, 0.0f, 1.0f), 5.0f);
         mSheald.draw(screen);
     }
-    else mShape.draw(screen, SCR_REF_OFFSET + mShape.angle(),1);
+    else mShape.draw(screen, SCR_REF_OFFSET + mShape.angle(),1.1f);
 
 }
+
 
 void Player::streeringWheel(float rotationRAD)
 {

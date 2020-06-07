@@ -12,7 +12,7 @@ Polygon::Polygon()
     mVelocity(1.0f,1.0f),
     mAcceleration(),
     mRadialVelocity{0.006f},
-    mRadius{ 25.0f },
+    mRadius{ 30.0f },
     mAngle{0.0f}
 
 {
@@ -32,6 +32,7 @@ Vect2d Polygon::velocity()
     return mVelocity;
 }
 
+
 Vect2d Polygon::acceleration()
 {
     return mAcceleration;
@@ -42,11 +43,26 @@ float Polygon::radius()
     return mRadius;
 }
 
+void Polygon::setRadius(float radius)
+{
+   mRadius= radius;
+}
+
 float Polygon::angle()
 {
     return mAngle;
 }
 
+void Polygon::setAngle(float Angle)
+{
+    mAngle = Angle;
+}
+
+void Polygon::setVelocity(float velocityX, float velocityY) 
+{
+    mVelocity.set(velocityX, velocityY);
+    
+}
 
 void Polygon::steerAngle(float angulardisplacement)
 {
@@ -102,6 +118,27 @@ void Polygon::buildCustom(std::vector<Vect2d> mPointsCloud)
     }
 }
 
+float Polygon::buildIrregular(size_t verticesCount, float minRadius, float maxRadius)
+{
+    mVertices.resize(std::max((size_t)3, verticesCount));
+    float norm{};
+    float bigestRadius{};
+    srand(time(NULL));
+
+    for (size_t i{}; i < mVertices.size(); ++i){
+        
+       
+        norm = rand() % (int) (maxRadius - minRadius) + minRadius ;
+        
+        if (norm > bigestRadius)
+        {
+            bigestRadius = norm;
+        }
+
+        mVertices[i].setPolar(norm, i * 2.0f * 3.141592654f / mVertices.size());
+    }
+    return bigestRadius;
+}
 void Polygon::buildCircle(float radius, float sideLength)
 {
     sideLength = std::max(1.0f, sideLength);

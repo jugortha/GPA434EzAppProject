@@ -4,7 +4,7 @@
 
 #include "Polygon.h"
 #include "Vect2d.h"
-
+#define SCR_REF_OFFSET 3.14159265f * (1.5f)
 class Player
 {
     
@@ -23,7 +23,7 @@ public:
        void setShealding(bool ShealdingStatus);
        float getMileage();
        void updatePlayer(size_t screenWidth, size_t screenHeight);
-
+     
 
 private:
     
@@ -39,6 +39,7 @@ private:
     Color mColor4;
     float mColorGardientModulation;
     float mMileage;
+    friend class WorldSimulator;
 }
 ;
 #endif // PLAYER_H

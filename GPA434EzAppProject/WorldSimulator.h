@@ -6,6 +6,7 @@
 #include "Color.h"
 #include "Player.h"
 #include "Asteroid.h"
+#define PI 3.14159265f
 
 class WorldSimulator
 {
@@ -17,11 +18,15 @@ public:
     void processDisplay(ezapp::Screen& screen);
     void userInput(ezapp::Keyboard const& keyboard);
     void userDefence(ezapp::Keyboard const& keyboard);
+    void asteroidGeneration(int milestone); 
+    void CollisionManager();
 
 private:
+    float bestScore;
     size_t mWidth, mHeight;
     Color mBackgroundColor;
     Player mPlayer;
     std::vector<Asteroid> mAsteroids;
+    int asteroidMilestone;
 };
 #endif // WORLDSIMULATION_H

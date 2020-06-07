@@ -7,6 +7,8 @@
 #include <vector>
 #include "Vect2d.h"
 #include <EzApp>
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 
 class Polygon
@@ -18,15 +20,16 @@ public:
    
     // Mutateurs
     void setColors(Color fillColor, Color outlineColor, float outlineWidth = 1.0f);
-
+  
     // Accesseurs
     Vect2d position();
     Vect2d velocity();
     Vect2d acceleration();
     float radius();
     float angle();
-    
-
+    void setAngle(float Angle);
+    void setRadius(float radius);
+    void setVelocity(float velocityX, float velocityY);
     void changePosition(float newXpos, float newYpos);
     void steerAngle(float angulardisplacement);
     
@@ -37,7 +40,7 @@ public:
     // build
     void buildRegular(size_t verticesCount, float circunscribedRadius);
     void buildCustom(std::vector<Vect2d>);
-    
+    float buildIrregular(size_t verticesCount, float minRadius, float maxRadius);
     void buildCircle(float radius, float sideLength = 10.0f);
 
     void draw(ezapp::Screen& screen, float rotation = 0.0f, float scale = 1.0f);
