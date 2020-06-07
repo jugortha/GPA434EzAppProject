@@ -27,7 +27,7 @@ public:
     float angle();
     
 
-
+    void changePosition(float newXpos, float newYpos);
     void steerAngle(float angulardisplacement);
     
     // Utilitaires

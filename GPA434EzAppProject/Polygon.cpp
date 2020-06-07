@@ -9,7 +9,7 @@ Polygon::Polygon()
     mOutlineColor(),
     mOutlineWidth{ 1.0f },
     mPosition(600.0f, 400.0f),
-    mVelocity(5.0f,5.0f),
+    mVelocity(1.0f,1.0f),
     mAcceleration(),
     mRadialVelocity{0.006f},
     mRadius{ 25.0f },
@@ -53,6 +53,11 @@ void Polygon::steerAngle(float angulardisplacement)
     mAngle += mRadialVelocity *angulardisplacement;
 }
 
+void Polygon::changePosition(float newXpos, float newYpos)
+{
+    mPosition.setX(newXpos);
+    mPosition.setY(newYpos);
+}
 
 
 

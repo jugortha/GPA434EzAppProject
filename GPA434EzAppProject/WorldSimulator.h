@@ -16,7 +16,7 @@ public:
     bool processEvents(ezapp::Keyboard const& keyboard, ezapp::Timer const& timer);
     void processDisplay(ezapp::Screen& screen);
     void userInput(ezapp::Keyboard const& keyboard);
-
+ 
 private:
     size_t mWidth, mHeight;
     Color mBackgroundColor;

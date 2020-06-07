@@ -19,7 +19,7 @@ public:
        void streeringWheel(float rotationRAD);
        bool getGas();
        void setGas(bool gasPadelStatus);
-       void updatePlayerPos();
+       void updatePlayer(size_t screenWidth, size_t screenHeight);
 private:
     
    

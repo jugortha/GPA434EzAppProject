@@ -32,7 +32,7 @@ void WorldSimulator::processDisplay(ezapp::Screen& screen)
         mBackgroundColor.alpha());  
     screen.clear();
 
-    mPlayer.updatePlayerPos();
+    mPlayer.updatePlayer(mWidth, mHeight);
     mPlayer.draw(screen);
 }
 

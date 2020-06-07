@@ -14,11 +14,11 @@ public:
     ~Vect2d();
 
     // Accesseurs
-    float x();
-    float y();
-    float norm_squared();
-    float norm();
-    float theta(); // radians
+    float x() const;
+    float y() const;
+    float norm_squared() const;
+    float norm() const;
+    float theta() const; // radians
 
     // Mutateurs
     void setX(float x);
@@ -28,10 +28,10 @@ public:
 
     // Utilitaires
     void reset();
-    float distance_squared(Vect2d const & other);
-    float distance(Vect2d const & other);
+    float distance_squared(Vect2d const & other) const;
+    float distance(Vect2d const & other) const;
 
-    std::string toString();
+    std::string toString() const;
 
 private:
     float mX;
