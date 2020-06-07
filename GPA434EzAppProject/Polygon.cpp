@@ -9,8 +9,9 @@ Polygon::Polygon()
     mOutlineColor(),
     mOutlineWidth{ 1.0f },
     mPosition(600.0f, 400.0f),
-    mVelocity(),
+    mVelocity(5.0f,5.0f),
     mAcceleration(),
+    mRadialVelocity{0.006f},
     mRadius{ 25.0f },
     mAngle{0.0f}
 
@@ -40,6 +41,20 @@ float Polygon::radius()
 {
     return mRadius;
 }
+
+float Polygon::angle()
+{
+    return mAngle;
+}
+
+
+void Polygon::steerAngle(float angulardisplacement)
+{
+    mAngle += mRadialVelocity *angulardisplacement;
+}
+
+
+
 
 void Polygon::addAcceleration(Vect2d& acceleration)
 {

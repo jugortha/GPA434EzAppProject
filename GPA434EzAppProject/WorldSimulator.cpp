@@ -16,8 +16,8 @@ WorldSimulator::~WorldSimulator()
 
 bool WorldSimulator::processEvents(ezapp::Keyboard const& keyboard, ezapp::Timer const& timer)
 {
+    userInput(keyboard);
     // run until ESCAPE is pressed
-
     return !keyboard.isKeyPressed(ezapp::Keyboard::Key::Escape);
 }
 
@@ -29,10 +29,24 @@ void WorldSimulator::processDisplay(ezapp::Screen& screen)
     screen.setBrush(mBackgroundColor.red(),
         mBackgroundColor.green(),
         mBackgroundColor.blue(),
-        mBackgroundColor.alpha());
-    
-    
+        mBackgroundColor.alpha());  
     screen.clear();
 
+    mPlayer.updatePlayerPos();
     mPlayer.draw(screen);
+}
+
+void WorldSimulator::userInput(ezapp::Keyboard const& keyboard)
+{
+    if (keyboard.isKeyPressed(ezapp::Keyboard::Key::Right)) {
+        mPlayer.streeringWheel(1);
+    }
+    if (keyboard.isKeyPressed(ezapp::Keyboard::Key::Left)) {
+        mPlayer.streeringWheel(-1);
+    }
+    if (keyboard.isKeyPressed(ezapp::Keyboard::Key::Up)) {
+        mPlayer.setGas(true);
+
+    }
+    else  mPlayer.setGas(false) ;
 }

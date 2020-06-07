@@ -24,9 +24,12 @@ public:
     Vect2d velocity();
     Vect2d acceleration();
     float radius();
-   
+    float angle();
+    
 
 
+    void steerAngle(float angulardisplacement);
+    
     // Utilitaires
     void addAcceleration(Vect2d& acceleration);
     void processTime(float elapsedTime);
@@ -47,7 +50,8 @@ private:
     Vect2d mPosition;
     Vect2d mVelocity;
     Vect2d mAcceleration;
-  
+
+    float mRadialVelocity;
     float mRadius;
     float mAngle;
 };
