@@ -26,14 +26,14 @@ void Asteroid::randomize(float minRad, float maxRad, float minPosX, float maxPos
 
 float Asteroid::fRandom(float min, float max)
 {
-    srand(time(NULL));
+    srand((int)time(NULL));
     return ((float) (rand()) / (float)(max - min) + min);
    
 }
 
 float Asteroid::random(float min, float max)
 {
-    srand(time(NULL));
+    srand((int)time(NULL));
     return rand() % (int)(max - min) + min;
 
 }

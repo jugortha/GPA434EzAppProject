@@ -10,11 +10,9 @@ Polygon::Polygon()
     mOutlineWidth{ 1.0f },
     mPosition(600.0f, 400.0f),
     mVelocity(1.0f,1.0f),
-    mAcceleration(),
     mRadialVelocity{0.006f},
     mRadius{ 30.0f },
     mAngle{0.0f}
-
 {
 }
 
@@ -123,7 +121,7 @@ float Polygon::buildIrregular(size_t verticesCount, float minRadius, float maxRa
     mVertices.resize(std::max((size_t)3, verticesCount));
     float norm{};
     float bigestRadius{};
-    srand(time(NULL));
+    srand((int)time(NULL));
 
     for (size_t i{}; i < mVertices.size(); ++i){
         

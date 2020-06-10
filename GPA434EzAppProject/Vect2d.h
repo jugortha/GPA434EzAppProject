@@ -10,6 +10,7 @@ class Vect2d
 {
 public:
     // Constructeurs + Destructeur
+    Vect2d();
     Vect2d(float x = 0.0f, float y = 0.0f);
     ~Vect2d();
 

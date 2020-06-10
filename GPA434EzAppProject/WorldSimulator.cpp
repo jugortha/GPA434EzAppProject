@@ -99,9 +99,10 @@ void WorldSimulator::asteroidGeneration(int milestone)
 void WorldSimulator::CollisionManager()
 {
     for (auto& Asteroid : mAsteroids) {
-        float instantDistance{ pow(Asteroid.mShape.position().x() - mPlayer.mShape.position().x(), 2) + pow(Asteroid.mShape.position().y() - mPlayer.mShape.position().y(), 2) };
-       
-        if (instantDistance <= pow(Asteroid.mShape.radius() + mPlayer.mShape.radius(), 2))
+        //float instantDistance{ pow(Asteroid.mShape.position().x() - mPlayer.mShape.position().x(), 2) + pow(Asteroid.mShape.position().y() - mPlayer.mShape.position().y(), 2) };
+        mPlayer.mShape.position().distance_squared(Asteroid.mShape.position());
+       // if (instantDistance <= pow(Asteroid.mShape.radius() + mPlayer.mShape.radius(), 2))
+        if (mPlayer.mShape.position().distance_squared(Asteroid.mShape.position()) <= pow(Asteroid.mShape.radius() + mPlayer.mShape.radius(), 2))
         {
             if (bestScore < mPlayer.mMileage)
             {

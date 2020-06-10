@@ -4,6 +4,11 @@
 #include <sstream>
 
 
+Vect2d::Vect2d()
+	: Vect2d(0.0f, 0.0f)
+{
+}
+
 Vect2d::Vect2d(float x, float y)
     : mX{ x }, mY{ y }
 {
