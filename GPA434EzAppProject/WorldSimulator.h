@@ -19,8 +19,10 @@ public:
     void userInput(ezapp::Keyboard const& keyboard);
     void userDefence(ezapp::Keyboard const& keyboard);
     void asteroidGeneration(int milestone); 
-    void CollisionManager();
-
+    void CollisionDetector(void);
+    void updateAsteroidsSwarm(ezapp::Screen& screen) ;
+    void CollisionAnimation(ezapp::Screen& screen);
+    void screenText(ezapp::Screen& screen) ;
 private:
     float bestScore;
     size_t mWidth, mHeight;
@@ -28,5 +30,8 @@ private:
     Player mPlayer;
     std::vector<Asteroid> mAsteroids;
     int asteroidMilestone;
+    bool mCollisionIndicator;
+     int mTimeCounter;
+     float mTimeCounter2;
 };
 #endif // WORLDSIMULATION_H

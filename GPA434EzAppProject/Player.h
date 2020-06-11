@@ -15,13 +15,13 @@ public:
 
     
       
-       void draw(ezapp::Screen& screen);
-       void streeringWheel(float rotationRAD);
+       void draw(ezapp::Screen& screen) ;
+       void streeringWheel(float rotationRAD) ;
        bool getGas();
        void setGas(bool gasPadelStatus);
        bool getShealding();
        void setShealding(bool ShealdingStatus);
-       float getMileage();
+       float Mileage() const;
        void updatePlayer(size_t screenWidth, size_t screenHeight);
      
 

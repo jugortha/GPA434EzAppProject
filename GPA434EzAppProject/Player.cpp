@@ -30,7 +30,7 @@ Player::~Player()
 {
 }
 
-void Player::draw(ezapp::Screen& screen)
+void Player::draw(ezapp::Screen& screen) 
 {
     if (mShealding)
     {
@@ -65,11 +65,14 @@ bool Player::getShealding()
     return mShealding;
 }
 
+
+
 void Player::setShealding(bool ShealdingStatus)
 {
     mShealding = ShealdingStatus;
 }
-float Player::getMileage() {
+
+float Player::Mileage()  const {
     return mMileage;
 }
 

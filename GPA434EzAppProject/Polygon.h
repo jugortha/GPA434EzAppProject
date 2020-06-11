@@ -22,11 +22,11 @@ public:
     void setColors(Color fillColor, Color outlineColor, float outlineWidth = 1.0f);
   
     // Accesseurs
-    Vect2d position();
-    Vect2d velocity();
-    Vect2d acceleration();
-    float radius();
-    float angle();
+    Vect2d position() const;
+    Vect2d velocity() const;
+    Vect2d acceleration() const;
+    float radius() const;
+    float angle() const;
     void setAngle(float Angle);
     void setRadius(float radius);
     void setVelocity(float velocityX, float velocityY);
@@ -53,7 +53,6 @@ private:
     Vect2d mPosition;
     Vect2d mVelocity;
     Vect2d mAcceleration;
-
     float mRadialVelocity;
     float mRadius;
     float mAngle;

@@ -12,19 +12,23 @@
 class Asteroid
 {
     public:
-        Asteroid(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel, int minVx, int maxVx,float minAngle, float maxAngle);
+        Asteroid(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel, int minVertices, int maxVertices,float minAngle, float maxAngle);
    
         ~Asteroid();
     
     void randomize(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel, int minVx, int maxVx, float minAngle, float maxAngle);
-    void draw(ezapp::Screen& screen);
+    void draw(ezapp::Screen& screen, float rotation = 0.0f);
     void updateAsteroid(size_t screenWidth, size_t screenHeight);
+
+
     private:
-        friend class WorldSimulator;
+
+   friend class WorldSimulator;
     Polygon mShape;
     Color fillColor;
     Color outlineColor;
     float fRandom(float min, float max);
     float random(float min, float max);
+    bool mCollisionSpin;
 };
 #endif // ASTEROID_H

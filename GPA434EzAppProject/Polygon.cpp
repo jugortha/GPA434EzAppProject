@@ -9,7 +9,8 @@ Polygon::Polygon()
     mOutlineColor(),
     mOutlineWidth{ 1.0f },
     mPosition(600.0f, 400.0f),
-    mVelocity(1.0f,1.0f),
+    mVelocity(1.1f,1.1f),
+    mAcceleration(0.0f,0.0f),
     mRadialVelocity{0.006f},
     mRadius{ 30.0f },
     mAngle{0.0f}
@@ -20,23 +21,23 @@ Polygon::~Polygon()
 {
 }
 
-Vect2d Polygon::position()
+Vect2d Polygon::position() const
 {
     return mPosition;
 }
 
-Vect2d Polygon::velocity()
+Vect2d Polygon::velocity() const
 {
     return mVelocity;
 }
 
 
-Vect2d Polygon::acceleration()
+Vect2d Polygon::acceleration() const
 {
     return mAcceleration;
 }
 
-float Polygon::radius()
+float Polygon::radius() const
 {
     return mRadius;
 }
@@ -46,7 +47,7 @@ void Polygon::setRadius(float radius)
    mRadius= radius;
 }
 
-float Polygon::angle()
+float Polygon::angle() const
 {
     return mAngle;
 }

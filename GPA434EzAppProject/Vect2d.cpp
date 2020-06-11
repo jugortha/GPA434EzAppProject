@@ -1,7 +1,6 @@
 #include "Vect2d.h"
 
-#include <cmath>
-#include <sstream>
+
 
 
 Vect2d::Vect2d()

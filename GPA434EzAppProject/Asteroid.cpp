@@ -2,9 +2,11 @@
 
 
 Asteroid::Asteroid(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel, int minVx, int maxVx,float minAngle, float maxAngle)
-    :fillColor(fRandom(0,1), fRandom(0, 1), fRandom(0, 1), 1.0f), outlineColor(0.0f, 0.0f, 0.0f, 1.0f)
+    :outlineColor(0.0f, 0.0f, 0.0f, 1.0f), mCollisionSpin{false}
     {
     randomize(minRad,  maxRad,  minPosX,  maxPosX,  minPosY,  maxPosY,  minVel,  maxVel,  minVx,  maxVx, minAngle,  maxAngle);
+    float colorGradAsteroid = fRandom(0.5, 0.1);
+    fillColor.set(colorGradAsteroid, colorGradAsteroid, colorGradAsteroid);
     mShape.setColors(fillColor, outlineColor, 2.5f);
 
      }
@@ -13,12 +15,12 @@ Asteroid::~Asteroid()
 {
 }
 
-void Asteroid::randomize(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel,int minVx, int maxVx, float minAngle, float maxAngle)
+void Asteroid::randomize(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel,int minVertices, int maxVertices, float minAngle, float maxAngle)
 {
   
     mShape.changePosition( random(minPosX, maxPosX), random(minPosY, maxPosY));
     mShape.setVelocity(random(minVel, maxVel), random(minVel, maxVel));
-    mShape.setRadius(mShape.buildIrregular((int)random(minVx, maxVx), minRad, maxRad));
+    mShape.setRadius(mShape.buildIrregular((int)random((float)minVertices, (float)maxVertices), minRad, maxRad));
     mShape.setAngle(random(minAngle, maxAngle));
 
 }
@@ -38,10 +40,9 @@ float Asteroid::random(float min, float max)
 
 }
 
-void Asteroid::draw(ezapp::Screen& screen)
+void Asteroid::draw(ezapp::Screen& screen, float rotation)
 {
-    
-        mShape.draw(screen);
+     mShape.draw(screen, rotation);
 }
 
 void Asteroid::updateAsteroid(size_t screenWidth, size_t screenHeight){

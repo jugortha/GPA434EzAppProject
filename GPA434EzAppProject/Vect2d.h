@@ -2,16 +2,17 @@
 #ifndef VECT_2D_H
 #define VECT_2D_H
 
-
 #include <string>
-
+#include <iostream>
+#include <cmath>
+#include <sstream>
 
 class Vect2d
 {
 public:
     // Constructeurs + Destructeur
     Vect2d();
-    Vect2d(float x = 0.0f, float y = 0.0f);
+    Vect2d(float x , float y );
     ~Vect2d();
 
     // Accesseurs
