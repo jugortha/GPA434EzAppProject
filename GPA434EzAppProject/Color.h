@@ -14,10 +14,10 @@ public:
     ~Color();
 
     // Accesseurs (getters)
-    float red();
-    float green();
-    float blue();
-    float alpha();
+    float red() const;
+    float green() const;
+    float blue() const;
+    float alpha() const;
 
     // Mutateurs (setters)
     void setRed(float red);
@@ -28,7 +28,7 @@ public:
     void set(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255);
 
     // Fonction utilitaire
-    Color processGradient(Color other, float ratio, bool includeAlpha = false);
+    Color processGradient(Color const& other, float ratio, bool includeAlpha = false)  const;
     void invert(bool includeAlpha = false);
 
 private:
@@ -37,6 +37,6 @@ private:
     float mBlue;
     float mAlpha;
 
-    float linearInterpolation(float x1, float y1, float x2, float y2, float x);
+    float linearInterpolation(float x1, float y1, float x2, float y2, float x)  const;
 };
 #endif // COLOR_H

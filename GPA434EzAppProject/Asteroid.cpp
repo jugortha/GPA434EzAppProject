@@ -5,7 +5,7 @@ Asteroid::Asteroid(float minRad, float maxRad, float minPosX, float maxPosX, flo
     :outlineColor(0.0f, 0.0f, 0.0f, 1.0f), mCollisionSpin{false}
     {
     randomize(minRad,  maxRad,  minPosX,  maxPosX,  minPosY,  maxPosY,  minVel,  maxVel,  minVx,  maxVx, minAngle,  maxAngle);
-    float colorGradAsteroid = fRandom(0.5, 0.1);
+    float colorGradAsteroid = FloatRandom(0.5, 0.1);
     fillColor.set(colorGradAsteroid, colorGradAsteroid, colorGradAsteroid);
     mShape.setColors(fillColor, outlineColor, 2.5f);
 
@@ -26,7 +26,7 @@ void Asteroid::randomize(float minRad, float maxRad, float minPosX, float maxPos
 }
 
 
-float Asteroid::fRandom(float min, float max)
+float Asteroid::FloatRandom(float min, float max)
 {
     srand((int)time(NULL));
     return ((float) (rand()) / (float)(max - min) + min);

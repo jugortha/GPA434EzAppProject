@@ -9,6 +9,7 @@
 #include <EzApp>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <algorithm> 
 
 
 class Polygon
@@ -39,7 +40,7 @@ public:
     
     // build
     void buildRegular(size_t verticesCount, float circunscribedRadius);
-    void buildCustom(std::vector<Vect2d>);
+    void buildCustom(std::vector<Vect2d>& mPointsCloud);
     float buildIrregular(size_t verticesCount, float minRadius, float maxRadius);
     void buildCircle(float radius, float sideLength = 10.0f);
 

@@ -24,7 +24,7 @@ WorldSimulator::~WorldSimulator()
 bool WorldSimulator::processEvents(ezapp::Keyboard const& keyboard, ezapp::Timer const& timer)
 {
     userInput(keyboard);
-    userDefence(keyboard);
+    userDefence(keyboard);//Activate shield
     asteroidGeneration(asteroidMilestone);
     CollisionDetector();
 
@@ -37,10 +37,10 @@ void WorldSimulator::processDisplay(ezapp::Screen& screen)
     //BackgroundColor and animation
     CollisionAnimation(screen);
     screen.clear();
-    mPlayer.updatePlayer(mWidth, mHeight);
+    mPlayer.updatePlayer(mWidth, mHeight);//Update Player position
     updateAsteroidsSwarm(screen);
     mPlayer.draw(screen);
-    screenText(screen);
+    screenText(screen);// Top left of the screen text
     
 }
 
@@ -53,9 +53,9 @@ void WorldSimulator::userInput(ezapp::Keyboard const& keyboard)
         mPlayer.streeringWheel(-1);
     }
     if (keyboard.isKeyPressed(ezapp::Keyboard::Key::Up)) {
-        mPlayer.setGas(true);
+        mPlayer.setGasPedal(true);
     }
-    else  mPlayer.setGas(false) ;
+    else  mPlayer.setGasPedal(false) ;
 
 }
 
@@ -88,13 +88,13 @@ void WorldSimulator::CollisionDetector()
        
         if (mPlayer.mShape.position().distance_squared(Asteroid.mShape.position()) <= pow(Asteroid.mShape.radius() + mPlayer.mShape.radius(), 2))
         {
-            if (bestScore < mPlayer.mMileage)
+            if (bestScore < mPlayer.Mileage())
             {
                 //set bestscore
-                bestScore = mPlayer.mMileage;
+                bestScore = mPlayer.Mileage();
                 
             }
-            if (mPlayer.getShealding() == false)
+            if (mPlayer.Shealding() == false)
             {
                 //reset mileage
                 mPlayer.mMileage = 0;
@@ -116,13 +116,13 @@ void WorldSimulator::updateAsteroidsSwarm(ezapp::Screen& screen) {
     for (auto& Asteroid : mAsteroids) {
         Asteroid.updateAsteroid(mWidth, mHeight);
 
-        if (Asteroid.mCollisionSpin)
+        if (Asteroid.mCollisionSpin)// Asteroid spinning after collision
         {
             mTimeCounter2 += 0.025f;
 
             Asteroid.draw(screen, mTimeCounter2);
 
-            if (mTimeCounter2 > 6.24f)
+            if (mTimeCounter2 > 6.24f) //Stop asteroid spinning
             {
                 mTimeCounter2 = 0;
                 Asteroid.mCollisionSpin = false;

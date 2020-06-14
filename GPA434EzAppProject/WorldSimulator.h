@@ -19,7 +19,7 @@ public:
     void userInput(ezapp::Keyboard const& keyboard);
     void userDefence(ezapp::Keyboard const& keyboard);
     void asteroidGeneration(int milestone); 
-    void CollisionDetector(void);
+    void CollisionDetector();
     void updateAsteroidsSwarm(ezapp::Screen& screen) ;
     void CollisionAnimation(ezapp::Screen& screen);
     void screenText(ezapp::Screen& screen) ;

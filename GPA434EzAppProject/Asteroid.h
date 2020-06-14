@@ -7,7 +7,7 @@
 #include "Vect2d.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
-#define SCR_REF_OFFSET 3.14159265f * (1.5f)
+#define SCR_REF_OFFSET 3.14159265f * (1.5f) // Correction for the screen, because the screen render Y axis positive down and angles turn clockwise
 
 class Asteroid
 {
@@ -16,18 +16,19 @@ class Asteroid
    
         ~Asteroid();
     
-    void randomize(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel, int minVx, int maxVx, float minAngle, float maxAngle);
-    void draw(ezapp::Screen& screen, float rotation = 0.0f);
-    void updateAsteroid(size_t screenWidth, size_t screenHeight);
-
+        void randomize(float minRad, float maxRad, float minPosX, float maxPosX, float minPosY, float maxPosY, float minVel, float maxVel, int minVx, int maxVx, float minAngle, float maxAngle);
+        void draw(ezapp::Screen& screen, float rotation = 0.0f);
+        void updateAsteroid(size_t screenWidth, size_t screenHeight);
 
     private:
+
+        
 
    friend class WorldSimulator;
     Polygon mShape;
     Color fillColor;
     Color outlineColor;
-    float fRandom(float min, float max);
+    float FloatRandom(float min, float max);
     float random(float min, float max);
     bool mCollisionSpin;
 };

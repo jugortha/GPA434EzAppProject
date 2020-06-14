@@ -27,22 +27,22 @@ Color::~Color()
     // do nothing
 }
 
-float Color::red()
+float Color::red()  const
 {
     return mRed;
 }
 
-float Color::green()
+float Color::green()  const
 {
     return mGreen;
 }
 
-float Color::blue()
+float Color::blue()  const
 {
     return mBlue;
 }
 
-float Color::alpha()
+float Color::alpha()  const
 {
     return mAlpha;
 }
@@ -80,7 +80,7 @@ void Color::set(unsigned char red, unsigned char green, unsigned char blue, unsi
     set((float)red / 255.0f, (float)green / 255.0f, (float)blue / 255.0f, (float)alpha / 255.0f);
 }
 
-Color Color::processGradient(Color other, float ratio, bool includeAlpha)
+Color Color::processGradient(Color const& other, float ratio, bool includeAlpha)  const
 {
     Color gradientColor;
 
@@ -111,7 +111,7 @@ void Color::invert(bool includeAlpha)
     }
 }
 
-float Color::linearInterpolation(float x1, float y1, float x2, float y2, float x)
+float Color::linearInterpolation(float x1, float y1, float x2, float y2, float x)  const
 {
     return y1 + (x - x1) / (x2 - x1) * (y2 - y1); // on ne valide pas la division par 0
 }

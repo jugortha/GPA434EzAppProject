@@ -14,31 +14,31 @@ public:
     ~Player();
 
     
-      
-       void draw(ezapp::Screen& screen) ;
+         void draw(ezapp::Screen& screen) ;
        void streeringWheel(float rotationRAD) ;
-       bool getGas();
-       void setGas(bool gasPadelStatus);
-       bool getShealding();
+       bool GasPedal() const;
+       void setGasPedal(bool gasPadelStatus);
+       bool Shealding() const;
        void setShealding(bool ShealdingStatus);
        float Mileage() const;
        void updatePlayer(size_t screenWidth, size_t screenHeight);
-     
 
 private:
     
+    
+     
    
     Polygon mShape;
     Color mColor1;
     std::vector<Vect2d> mLayout;
     bool mGasPedal;
     bool mShealding;
-    Polygon mSheald;
-    Color mColor2;
-    Color mColor3;
-    Color mColor4;
+    Polygon mSheald;// Changing color circle shield activated with "Space" bar
+    Color mColor2;//Player color
+    Color mColor3;//Shield transitioning colors (original)
+    Color mColor4;//Shield transitioning colors
     float mColorGardientModulation;
-    float mMileage;
+    float mMileage;//Displeyed in top left of the screen 
     friend class WorldSimulator;
 }
 ;

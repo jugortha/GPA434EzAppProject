@@ -36,7 +36,7 @@ void Player::draw(ezapp::Screen& screen)
     {
         mColor4 = mColor2.processGradient(mColor3, std::sin(mColorGardientModulation) * 0.5f + 0.5f, false);
         mColorGardientModulation += 0.04f;
-        mSheald.setColors(mColor4, Color(0.0f, 0.0f, 0.0f, 1.0f), 5.0f);
+        mSheald.setColors(mColor4, Color(0.0f, 0.0f, 0.0f, 1.0f), 5.0f);// Changing color circle shield activated with "Space" bar
         mSheald.draw(screen);
     }
     else mShape.draw(screen, SCR_REF_OFFSET + mShape.angle(),1.1f);
@@ -49,18 +49,18 @@ void Player::streeringWheel(float rotationRAD)
     mShape.steerAngle(rotationRAD);
 }
 
-bool Player::getGas()
+bool Player::GasPedal() const
 {
     return mGasPedal;
 }
 
-void Player::setGas(bool gasPadelStatus)
+void Player::setGasPedal(bool gasPadelStatus)
 {
    mGasPedal = gasPadelStatus;
 }
 
 
-bool Player::getShealding()
+bool Player::Shealding() const
 {
     return mShealding;
 }
